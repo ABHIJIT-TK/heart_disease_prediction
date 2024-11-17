@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Heart Disease Classification Dataset | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="Predicting probability of heart disease in patients." />
+    <meta name="keywords" content="health,classification,heart conditions" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" type="text/javascript">
+    window["pageRequestStartTime"] = 1731829788147;
+    window["pageRequestEndTime"] = 1731829788220;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" id="gsi-client" src="https://accounts.google.com/gsi/client" async defer></script>
+  <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==">window.KAGGLE_JUPYTERLAB_PATH = "/static/assets/jupyterlab-v4/jupyterlab-index-05561fdae1aa7f0f4019.html";</script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+    <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" id="dynamic-favicon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+
+    <link rel="canonical" href="https://www.kaggle.com/datasets/sumaiyatasmeem/heart-disease-classification-dataset" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=dne" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=5bf3c9f45d06b890b0a5" />
+
+  
+    
+ 
+      <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T7QHS60L4Q', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Datasets'
+        });
+    </script>
+    <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" async src="https://www.googletagmanager.com/gtag/js?id=G-T7QHS60L4Q"></script>
+
+  
+    
+    <meta property="og:url" content="https://www.kaggle.com/datasets/sumaiyatasmeem/heart-disease-classification-dataset" />
+    <meta property="og:title" content="Heart Disease Classification Dataset" />
+    <meta property="og:description" content="Predicting probability of heart disease in patients." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/1652370/2711897/cb9567ec81f889c6fb59e18565aa8c10/dataset-card.jpg?t=2021-10-16-13-18-53" />
+    <meta property="fb:app_id" content="2665027677054710" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+            <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Heart Disease Classification Dataset","description":"### Context\n\nUse this heart disease classification dataset to predict which patients are most likely to suffer from a heart disease in the near future using the features given. \n\n\n### Content\n\nData Dictionary\n\nage: Displays the age of the individual.\n\nsex: Displays the gender of the individual using the following format : 1 = male 0 = female\n\ncp- Chest-pain type: displays the type of chest-pain experienced by the individual using the following format : 0 = typical angina 1 = atypical angina 2 = non — anginal pain 3 = asymptotic\n\ntrestbps- Resting Blood Pressure: displays the resting blood pressure value of an individual in mmHg (unit). anything above 130-140 is typically cause for concern.\n\nchol- Serum Cholestrol: displays the serum cholesterol in mg/dl (unit)\n\nfbs- Fasting Blood Sugar: compares the fasting blood sugar value of an individual with 120mg/dl. If fasting blood sugar &gt; 120mg/dl then : 1 (true) else : 0 (false) '&gt;126' mg/dL signals diabetes\n\nrestecg- Resting ECG : displays resting electrocardiographic results 0 = normal 1 = having ST-T wave abnormality 2 = left ventricular hyperthrophy\n\nthalach- Max heart rate achieved : displays the max heart rate achieved by an individual.\n\nexang- Exercise induced angina : 1 = yes 0 = no\n\noldpeak- ST depression induced by exercise relative to rest: displays the value which is an integer or float.\n\nslope- Slope of the peak exercise ST segment : 0 = upsloping: better heart rate with excercise (uncommon) 1 = flat: minimal change (typical healthy heart) 2 = downsloping: signs of unhealthy heart\n\nca- Number of major vessels (0–3) colored by flourosopy : displays the value as integer or float.\n\nthal : Displays the thalassemia : 1,3 = normal 6 = fixed defect 7 = reversible defect: no proper blood movement when excercising\n\ntarget : Displays whether the individual is suffering from heart disease or not : 1 = yes 0 = no\n\n\n### Acknowledgements\n\nWe wouldn't be here without the help of others. If you owe any attributions or thanks, include them here along with any citations of past research.\n","url":"https://www.kaggle.com/sumaiyatasmeem/heart-disease-classification-dataset","version":1,"keywords":["subject, health and fitness, health","task, classification","subject, health and fitness, health, health conditions, heart conditions"],"license":{"@type":"CreativeWork","name":"CC0: Public Domain","url":"https://creativecommons.org/publicdomain/zero/1.0/"},"identifier":["1652370"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"Sumaiya Tasmeem","url":"https://www.kaggle.com/sumaiyatasmeem","image":"https://storage.googleapis.com/kaggle-avatars/thumbnails/5272304-kg.png"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/datasets/sumaiyatasmeem/heart-disease-classification-dataset/download?datasetVersionNumber=1","contentSize":"4249 bytes"}],"commentCount":2,"dateModified":"2021-10-16T13:05:26.667Z","discussionUrl":"https://www.kaggle.com/sumaiyatasmeem/heart-disease-classification-dataset/discussion","alternateName":"Predicting probability of heart disease in patients.","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/1652370/2711897/cb9567ec81f889c6fb59e18565aa8c10/dataset-card.jpg?t=2021-10-16-13-18-53","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":2},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":4981},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":27706},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":43}]}</script>
+        
+
+  
+    
+
+  
+    
+
+
+    <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" src="/static/assets/runtime.js?v=3413f7b8dd69e4220d3e"></script>
+  <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" src="/static/assets/vendor.js?v=f3ac72c8998734b22805"></script>
+  <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" src="/static/assets/app.js?v=252d4381fe212e02b339"></script>
+    <script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '0'
+      }
+    </script>
+</head>
+<body>
+<main>
+    
+
+
+
+
+
+<div id="site-container"></div>
+
+<div id="site-body" class="hide">
+    
+
+
+<script nonce="QX7mZCi3L2ubsJ0fNhCQ9w==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="QX7mZCi3L2ubsJ0fNhCQ9w==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    // Always use the production asset in local dev, which is served from GCS. We tried to proxy and / or serve this
+    // in a better way in localhost, but it didn't work out. See b/328073416#comment8 for details.
+    const forceProdHost = window.location.hostname === "localhost";
+    lib.src = `${forceProdHost ? "https://www.kaggle.com" : ""}/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+
+
+
+
+</div>
+
+
+
+
+  </main>
+</body>
+
+</html>
