@@ -50,3 +50,9 @@ You can install these requirements using the following command:
 
 ```bash
 pip install -r requirements.txt
+git clone https://github.com/ABHIJIT-TK/heart_disease_prediction.git
+cd heart_disease_prediction
+streamlit run heart_disease.py
+```
+## Output
+![image](https://github.com/user-attachments/assets/2fa9e9ae-2b16-447c-95cf-a1226f08a35b)
